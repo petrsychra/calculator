@@ -1,3 +1,52 @@
+@font-face{font-family:Source Sans Pro Regular;src:url(fonts/SourceSansPro-Regular.woff) format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:Source Sans Pro SemiBold;src:url(fonts/SourceSansPro-SemiBold.woff) format('woff');font-weight:400;font-display:swap}
+@font-face {font-family: 'Material Icons';font-style: normal;font-weight: 400;src: url(fonts/MaterialIcons-Regular.woff2) format('woff2');font-display:swap;}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Rules for sizing the icon. */
+.material-icons.md-14 { font-size: 14px; }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-20 { font-size: 20px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-30 { font-size: 30px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-40 { font-size: 40px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-56 { font-size: 56px; }
+.material-icons.md-60 { font-size: 60px; }
+.material-icons.md-70 { font-size: 70px; }
+.material-icons.md-80 { font-size: 80px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-turkis { color: #4ab8aa; }
+.material-icons.md-turkis.md-inactive { color: #A7C3CA; }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+.material-icons.md-grey { color: #E4E4E4; }
+
 .App {
   text-align: center;
 }
@@ -26,6 +75,38 @@
   color: rgb(112, 76, 182);
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row > button {
+  margin-left: 4px;
+  margin-right: 8px;
+}
+.row:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.check-text {
+  font-size: 25px;
+  font-family: 'Source Sans Pro SemiBold','Source Sans Pro Regular','Source Sans Pro',sans-serif;
+}
+
+.check-area {
+  margin-right: 30px;
+}
+
+.check-area i {
+  float: left;
+  padding-right: 10px;
+}
+
+.extra-padding {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 @keyframes App-logo-float {
   0% {
     transform: translateY(0);

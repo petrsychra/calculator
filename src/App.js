@@ -1,56 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import { Workstations } from './features/workstations/Workstations';
+import { Servers } from './features/servers/Servers';
 import './App.css';
 
 function App() {
+    const [workstations] = useState([]);
+    const ROUTES = {
+        WORKSTATIONS: "/workstations",
+        SERVERS: "/servers",
+    };    
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+        {/*<header className="App-header"></header>*/}
+        <main>
+            <h1>Sie wollen wissen, was Ihre monatliche IT kostet?</h1>
+            <p className="extra-padding">Ihre IT Kosten sind monatlich kalkulierbar. Welche auf Sie zukommen? Beantworten Sie ein paar Fragen und Sie werden es wissen</p>
+            <div className="row">
+                <div className="check-area">
+	        		<i className="material-icons md-turkis md-30">check</i><span className="check-text">monatliche Kündigung</span>
+		        </div>
+		        <div className="check-area">
+		        	<i className="material-icons md-turkis md-30">check</i><span className="check-text">Zufriedenheitsgarantie</span>
+		        </div>			        	
+		        <div className="check-area">
+		        	<i className="material-icons md-turkis md-30">check</i><span className="check-text">feste Preise</span>		        	
+		        </div>
+            </div>
+            <Router>
+                <Routes>
+                    <Route exact path="/" element={<Workstations />} />
+                    <Route path="/workstations" element={<Workstations />} />
+                    <Route path="/servers" element={<Servers />} />
+                </Routes>
+            </Router>
+             
+            <Counter />
+        </main>
+      
     </div>
   );
 }
