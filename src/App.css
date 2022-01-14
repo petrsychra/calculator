@@ -118,3 +118,113 @@
     transform: translateY(0px);
   }
 }
+
+.button {
+  appearance: none;
+  background: none;
+  font-size: 32px;
+  padding-left: 12px;
+  padding-right: 12px;
+  outline: none;
+  border: 2px solid transparent;
+  color: rgb(112, 76, 182);
+  padding-bottom: 4px;
+  cursor: pointer;
+  background-color: rgba(112, 76, 182, 0.1);
+  border-radius: 2px;
+  transition: all 0.15s;
+}
+
+/*  emot */
+
+.labelCtr {
+  margin-bottom: 50px;
+}
+
+label.radio {
+  height: 55px;
+  width: 55px;
+  display: inline-block;
+  margin: 0 10px;
+  background: transparent;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer
+}
+
+label.radio input {
+  visibility: hidden
+}
+
+label.radio input:checked + .emot {
+  -webkit-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+}
+
+label.radio input:checked + .emot,
+label.radio input:checked + .emot .mouth {
+  border-color: #4ab8aa;
+}
+
+label.radio input:checked + .emot:before,
+label.radio input:checked + .emot:after {
+  background: #4ab8aa;
+}
+
+label.radio .emot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fafafa;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+label.radio .emot:before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 5px;
+  height: 10px;
+  background: #ddd;
+}
+
+label.radio .emot:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 5px;
+  height: 10px;
+  background: #ddd;
+}
+
+label.radio .emot .mouth {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  left: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  background: transparent;
+  clip: rect(0, 35px, 10px, 0);
+}
+
+label.radio .emot .mouth.smile {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+label.radio .emot .mouth.sad {
+  -webkit-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  transform: translateY(50%);
+}

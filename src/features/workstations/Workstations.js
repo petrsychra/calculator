@@ -1,41 +1,36 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
-import {
-    decrement,
-    increment,
-    selectCount,
-  } from './workstationsSlice';
 import styles from './Workstations.module.css';
 
-export function Workstations() {
-    const numberOfPlatze = useSelector(selectCount);
-    const dispatch = useDispatch();
-    //const [numberOfPlatze, setIncrementAmount] = useState('1');
+export function Workstations(props) { 
 
-    //const numberOfPlatzeValue = Number(incrementAmount) || 0;    
+    const [workstations, setWorkstations] = useState('');
+
+    const handleWorkstationsChange = (event) => {
+        setWorkstations(event.target.value);
+    }
+
+    const passWorkstationOnClick = (event) => {
+        props.addWorkstations(workstations);
+    }
+
     return (
         <div className="workstations-wrapper">
-            <p className="extra-padding">Wie viele Arbeitsplätze (Laptops, Desktop-PCS) sind bei Ihnen im Einsatz?</p>
-            <button
-                className={styles.button}
-                aria-label="Decrement value"
-                onClick={() => dispatch(decrement())}
-            >
-            -
-            </button>
+            <p className="extra-padding">Wie viele Arbeitsplätze (Laptops, Desktop-PCS) sind bei Ihnen 
+            im Einsatz?{workstations}</p>
             <input
+                type="text"
                 className={styles.textbox}
-                aria-label="Set increment amount"
-                value={numberOfPlatze}
-            />            
+                aria-label="Number of Workstations"
+                value={workstations}
+                onChange={handleWorkstationsChange}
+            />  
             <button
                 className={styles.button}
                 aria-label="Increment value"
-                onClick={() => dispatch(increment())}
+                onClick={passWorkstationOnClick}
             >
-            +
-            </button>             
+                Next
+            </button>
         </div>
     )
 }
